@@ -1,27 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Moucharabi Demo</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    margin:0;
+    padding:40px;
+    max-width:800px;
+    margin:auto;
+}
+
+.container{
+    border:1px solid #ddd;
+    border-radius:20px;
+    padding:30px;
+}
+
+.card{
+    border:1px solid #ddd;
+    border-radius:12px;
+    padding:20px;
+    margin-top:20px;
+}
+
+button{
+    padding:14px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+input{
+    margin-top:10px;
+}
+
+.hidden{
+    display:none;
+}
+</style>
+
 </head>
 
 <body>
 
+<div class="container">
+
 <h1>Moucharabi</h1>
 
-<button>Login with TikTok</button>
+<p>
+AI-powered discovery, translation, and publishing of short videos.
+</p>
 
-<hr>
+<button id="loginBtn">
+Login with TikTok
+</button>
 
-<p>User Profile</p>
+<div class="card hidden" id="profile">
+
+<h3>User Profile</h3>
 
 <p>Username: demo_user</p>
 
-<hr>
+<p>Status: Connected</p>
+
+</div>
+
+<div class="card hidden" id="uploadSection">
+
+<h3>Upload Video</h3>
 
 <input type="file">
 
-<button>Upload to TikTok</button>
+<br><br>
+
+<button id="uploadBtn">
+Upload to TikTok
+</button>
+
+<p class="hidden" id="success">
+✅ Video published successfully.
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+const loginBtn=document.getElementById("loginBtn");
+const profile=document.getElementById("profile");
+const uploadSection=document.getElementById("uploadSection");
+const uploadBtn=document.getElementById("uploadBtn");
+const success=document.getElementById("success");
+
+loginBtn.addEventListener("click",function(){
+
+profile.classList.remove("hidden");
+
+uploadSection.classList.remove("hidden");
+
+});
+
+uploadBtn.addEventListener("click",function(){
+
+success.classList.remove("hidden");
+
+});
+
+</script>
 
 </body>
-
 </html>
